@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { heroFavorite }from '../actions/index'
 
 function HeroDetail({ hero, onFavoriteHero }) {
-    if(!hero) {
+    if(!hero || !hero.name) {
         return (
             <div>
                 No Hero selected!
@@ -11,14 +11,22 @@ function HeroDetail({ hero, onFavoriteHero }) {
         )
     }
     return (
-        <div className="card">
-            <div className="card-header">
-                Name: {hero.name}
+        <div className="row">
+            <div className="col-sm-6">
+                <div className="card">
+                    <div className="card-body">
+                        <img className="card-img-top" src={hero.image.url} alt="Hero Card"/>
+                    </div>
+                </div>
             </div>
-            <div className="card-body">
-                <h5 className="card-title">Special title treatment</h5>
-                <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" className="btn btn-primary">Favorite</a>
+            <div className="col-sm-6">
+                <div className="card">
+                    <div className="card-body">
+                        <h5 className="card-title">Name: {hero.name}</h5>
+                        <p className="card-text">Bla bla bla</p>
+                        <a href="#" className="btn btn-primary">Favorite</a>
+                    </div>
+                </div>
             </div>
         </div>
     );

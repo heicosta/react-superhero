@@ -13,12 +13,12 @@ function HeroDetail({ hero, onFavoriteHero }) {
     return (
         <div className="card">
             <div className="card-header">
-                Name:
+                Name: {hero.name}
             </div>
             <div className="card-body">
                 <h5 className="card-title">Special title treatment</h5>
                 <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <a href="#" className="btn btn-primary">Favorite</a>
             </div>
         </div>
     );
@@ -26,7 +26,8 @@ function HeroDetail({ hero, onFavoriteHero }) {
 
 const mapStateToProps = state => {
   return {
-    hero: state.hero
+    ...state,
+    hero: state.heroes.hero
   };
 };
 

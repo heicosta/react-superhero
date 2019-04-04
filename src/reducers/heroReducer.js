@@ -1,11 +1,17 @@
 import {DETAIL_HERO, FETCH_HERO} from '../actions/types';
 
-export default function heroReducer(state = [], action) {
+export default function heroReducer(state = { heroes: [], hero: {} }, action) {
   switch (action.type) {
     case FETCH_HERO:
-      return action.heroes;
+      return {
+        ...state.heroes,
+        heroes: action.heroes
+      };
     case DETAIL_HERO:
-      return action.hero;
+      return {
+        ...state,
+        hero: action.hero
+      };
     default:
       return state;
   }

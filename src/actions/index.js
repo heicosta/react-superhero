@@ -1,4 +1,4 @@
-import { ADD_POST, DELETE_POST, FETCH_POST, FETCH_HERO, DETAIL_HERO, FAVORITE_HERO } from './types';
+import {ADD_POST, DELETE_POST, DETAIL_HERO, FAVORITE_HERO, FETCH_HERO, FETCH_POST} from './types';
 import axios from 'axios';
 
 // super-heroes mongo-database
@@ -11,10 +11,7 @@ const superHeroApiUrl = `https://superheroapi.com/api/${superHeroApiAccessToken}
 export const favoriteHero = (hero) => {
   return {
     type: FAVORITE_HERO,
-    state: {
-      ... state,
-      hero
-    }
+    hero
   }
 };
 
@@ -27,10 +24,7 @@ export const heroFavorite = (hero) => {
 export const detailHero = (hero) => {
   return {
     type: DETAIL_HERO,
-    state: {
-      ... state,
-      hero
-    }
+    hero
   }
 };
 
@@ -43,10 +37,7 @@ export const heroDetail = (hero) => {
 export const fetchHeroes = (heroes) => {
   return {
     type: FETCH_HERO,
-    state: {
-      ... state,
-      heroes
-    }
+    heroes
   }
 };
 

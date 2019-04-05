@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import HeroCard from '../components/HeroCard';
+import HeroFavoriteCard from '../components/HeroFavoriteCard';
 import { heroUnfavorite }from '../actions/index'
 
 
@@ -16,7 +16,7 @@ function HeroFavorite({ favorites, onUnfavoriteHero }) {
         <div className="row">
             {favorites.map(hero => {
                 return (
-                    <HeroCard hero={ hero } onUnfavoriteHero={ onUnfavoriteHero } key={ hero.id } />
+                    <HeroFavoriteCard hero={ hero } onUnfavoriteHero={ onUnfavoriteHero } key={ hero.id } />
                 );
             })}
         </div>
@@ -25,7 +25,7 @@ function HeroFavorite({ favorites, onUnfavoriteHero }) {
 
 const mapStateToProps = state => {
     return {
-        ...state.heroes,
+        ...state.heroes, // todo verify if necessary
         favorites: state.heroes.favorites
     };
 };

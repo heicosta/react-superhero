@@ -13,18 +13,21 @@ class App extends Component {
     render() {
         return (
             <div className="container">
+                <br/>
                 <div className="row" style={stylesApp}>
                     <h3> Top Cyro[R0x] Heroes </h3>
                     <div className="col-md-12">
                         <HeroList/>
                     </div>
                 </div>
+                <br/>
                 <div className="row">
 
                     <div className="col-md-12">
                         <HeroDetail/>
                     </div>
                 </div>
+                <br/>
                 <div className="row">
                     <h3> Favorites </h3>
                     <div className="col-md-12">

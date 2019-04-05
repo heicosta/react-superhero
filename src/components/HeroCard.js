@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ hero, isFavorite, onDetailHero }) => {
+export default ({ hero, onDetailHero }) => {
   return (
       <div className="col-sm-2">
         <div className="card">

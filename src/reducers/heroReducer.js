@@ -15,21 +15,26 @@ export default function heroReducer(state = { heroes: [], hero: {}, favorites: [
     case FETCH_FAVORITES:
       return {
         ...state.heroes.favorites,
-        favorites: action.favorites !== undefined ? action.favorites : []
+        favorites: action.favorites !== undefined
+            ? action.favorites
+            : []
       };
     case FAVORITE_HERO:
       return {
         ...state,
         hero: {},
-        favorites: state.favorites !== undefined ? state.favorites.concat(action.hero) : [action.hero]
+        favorites: state.favorites !== undefined
+            ? [ ...state.favorites, action.hero ]
+            : [ action.hero ]
       };
     case UNFAVORITE_HERO:
       return {
         ...state,
         hero: {},
-        favorites: state.favorites.slice(state.favorites.indexOf(action.hero))
-        //,
-        //favorites: [ action.hero ]
+        favorites: [
+            ...state.favorites.slice(0, state.favorites.indexOf(action.hero)),
+            ...state.favorites.slice(state.favorites.indexOf(action.hero) + 1)
+        ]
       };
     default:
       return state;

@@ -37,7 +37,7 @@ function HeroDetail({ hero, onFavoriteHero }) {
                 </div>
             </div>
             <div className="col-1">
-                <a onClick={() => onFavoriteHero(hero)} className="btn btn-primary">Favorite</a>
+                <a onClick={() => onFavoriteHero(hero)} className="btn btn-primary">Add to Favorites</a>
             </div>
         </div>
     );

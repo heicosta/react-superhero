@@ -1,4 +1,4 @@
-import {ADD_POST, DELETE_POST, DETAIL_HERO, FAVORITE_HERO, FETCH_HERO, FETCH_POST} from './types';
+import {ADD_POST, DELETE_POST, DETAIL_HERO, FAVORITE_HERO, UNFAVORITE_HERO, FETCH_FAVORITES, FETCH_HERO, FETCH_POST} from './types';
 import axios from 'axios';
 
 // super-heroes mongo-database
@@ -7,6 +7,19 @@ const apiUrl = 'http://localhost:heroes/heroes';
 // super-hero api
 const superHeroApiAccessToken = '2282843265370971';
 const superHeroApiUrl = `https://superheroapi.com/api/${superHeroApiAccessToken}`;
+
+export const unfavoriteHero = (hero) => {
+  return {
+    type: UNFAVORITE_HERO,
+    hero
+  }
+};
+
+export const heroUnfavorite = (hero) => {
+  return (dispatch) => {
+    dispatch(unfavoriteHero(hero));
+  }
+};
 
 export const favoriteHero = (hero) => {
   return {
@@ -74,13 +87,26 @@ export const fetchAllHeroes = () => {
   };
 };
 
+export const fetchFavoritesHeroes = (favorites) => {
+  return {
+    type: FETCH_FAVORITES,
+    favorites
+  }
+};
+
+export const fetchAllFavoriteHeroes = (favorites) => {
+  return (dispatch) => {
+    dispatch(fetchFavoritesHeroes(favorites));
+  }
+};
+
 
 // TODO remove
 export const createPost = ({ title, body }) => {
   return (dispatch) => {
     return axios.post(`${apiUrl}/add`, {title, body})
       .then(response => {
-        dispatch(createPostSuccess(response.data))
+        dispatch(createPostSuccess(response.data));
       })
       .catch(error => {
         throw(error);

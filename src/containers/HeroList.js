@@ -4,7 +4,7 @@ import HeroCard from '../components/HeroCard';
 import { heroDetail }from '../actions/index'
 
 function HeroList({ heroes, onDetailHero }) {
-    if(!heroes && !heroes.length) {
+    if(!heroes || !heroes.length) {
         return (
             <div>
                 Loading SuperHeroes from http://superheroapi.com ...

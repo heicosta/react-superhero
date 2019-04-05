@@ -8,12 +8,14 @@ import App from './App';
 import rootReducer from './reducers';
 import { fetchAllPosts } from './actions/index';
 import { fetchAllHeroes } from './actions/index';
+import { fetchAllFavoriteHeroes } from './actions/index';
 
 import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 store.dispatch(fetchAllHeroes());
+store.dispatch(fetchAllFavoriteHeroes());
 store.dispatch(fetchAllPosts());
 
 ReactDOM.render(

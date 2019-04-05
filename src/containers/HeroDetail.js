@@ -5,9 +5,7 @@ import { heroFavorite }from '../actions/index'
 function HeroDetail({ hero, onFavoriteHero }) {
     if(!hero || !hero.name) {
         return (
-            <div>
-                No Hero selected!
-            </div>
+            <div></div>
         )
     }
     return (
@@ -24,7 +22,7 @@ function HeroDetail({ hero, onFavoriteHero }) {
                     <div className="card-body">
                         <h5 className="card-title">Name: {hero.name}</h5>
                         <p className="card-text">Bla bla bla</p>
-                        <a href="#" className="btn btn-primary">Favorite</a>
+                        <a href="#" onClick={() => onFavoriteHero(hero)} className="btn btn-primary">Favorite</a>
                     </div>
                 </div>
             </div>

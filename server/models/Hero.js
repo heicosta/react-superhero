@@ -17,10 +17,10 @@ let Hero = new Schema({
   },
   imgUrl: {
     type: String
-  },
-  imgUrl: {
-      collection: 'heroes'
   }
+},
+{
+  collection: 'heroes'
 });
 
 module.exports = mongoose.model('Hero', Hero);

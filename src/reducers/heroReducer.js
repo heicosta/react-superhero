@@ -10,7 +10,7 @@ export default function heroReducer(state = { heroes: [], hero: {}, favorites: [
     case DETAIL_HERO:
       return {
         ...state,
-        hero: state.hero === undefined ? action.hero : undefined
+        hero: state.hero === undefined || state.hero.name !== action.hero.name ? action.hero : undefined
       };
     case FETCH_FAVORITES:
       return {

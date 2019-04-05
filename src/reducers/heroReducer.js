@@ -10,7 +10,7 @@ export default function heroReducer(state = { heroes: [], hero: {}, favorites: [
     case DETAIL_HERO:
       return {
         ...state,
-        hero: action.hero
+        hero: state.hero === undefined ? action.hero : undefined
       };
     case FETCH_FAVORITES:
       return {
@@ -32,7 +32,6 @@ export default function heroReducer(state = { heroes: [], hero: {}, favorites: [
     case UNFAVORITE_HERO:
       return {
         ...state,
-        hero: {},
         favorites: [
             ...state.favorites.slice(0, state.favorites.indexOf(action.hero)),
             ...state.favorites.slice(state.favorites.indexOf(action.hero) + 1)

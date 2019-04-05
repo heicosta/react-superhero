@@ -1,4 +1,4 @@
-import {ADD_POST, DELETE_POST, DETAIL_HERO, FAVORITE_HERO, UNFAVORITE_HERO, FETCH_FAVORITES, FETCH_HEROES, FETCH_POST} from './types';
+import { DETAIL_HERO, FAVORITE_HERO, UNFAVORITE_HERO, FETCH_FAVORITES, FETCH_HEROES } from './types';
 import axios from 'axios';
 
 // super-heroes mongo-database

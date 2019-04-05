@@ -5,6 +5,7 @@ import { heroUnfavorite }from '../actions/index'
 
 
 function HeroFavorite({ favorites, onUnfavoriteHero }) {
+
     if(!favorites || !favorites.length) {
         return (
             <div>

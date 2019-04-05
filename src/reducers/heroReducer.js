@@ -1,8 +1,8 @@
-import {DETAIL_HERO, FETCH_HERO, FETCH_FAVORITES, FAVORITE_HERO, UNFAVORITE_HERO} from '../actions/types';
+import {DETAIL_HERO, FETCH_HEROES, FETCH_FAVORITES, FAVORITE_HERO, UNFAVORITE_HERO} from '../actions/types';
 
 export default function heroReducer(state = { heroes: [], hero: {}, favorites: [] }, action) {
   switch (action.type) {
-    case FETCH_HERO:
+    case FETCH_HEROES:
       return {
         ...state.heroes,
         heroes: action.heroes

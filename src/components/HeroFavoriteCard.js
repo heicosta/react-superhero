@@ -7,7 +7,7 @@ export default ({ hero, onUnfavoriteHero }) => {
           <div className="card">
               <img className="card-img-top" src={hero.image.url} alt="Card image cap"/>
               <div className="card-body">
-                  <a className="btn btn-primary" onClick={() => onUnfavoriteHero(hero)}>Remove</a>
+                  <a className="btn btn-danger" onClick={() => onUnfavoriteHero(hero)}>Remove</a>
               </div>
           </div>
       </div>

@@ -10,21 +10,13 @@ function HeroDetail({ hero, onFavoriteHero }) {
     }
     return (
         <div className="row">
-            <div className="col-sm-6">
-                <div className="card">
-                    <div className="card-body">
-                        <img className="card-img-top" src={hero.image.url} alt="Hero Card"/>
-                    </div>
-                </div>
+            <div className="col-3">
+                <img className="card-img-top"  src={hero.image.url} alt="Hero Card"/>
             </div>
-            <div className="col-sm-6">
-                <div className="card">
-                    <div className="card-body">
-                        <h5 className="card-title">Name: {hero.name}</h5>
-                        <p className="card-text">Bla bla bla</p>
-                        <a href="#" onClick={() => onFavoriteHero(hero)} className="btn btn-primary">Favorite</a>
-                    </div>
-                </div>
+            <div className="col-9">
+                <h5 className="card-title">Name: {hero.name}</h5>
+                <p className="card-text">Bla bla bla</p>
+                <a href="#" onClick={() => onFavoriteHero(hero)} className="btn btn-primary">Favorite</a>
             </div>
         </div>
     );

@@ -24,7 +24,9 @@ export default function heroReducer(state = { heroes: [], hero: {}, favorites: [
         ...state,
         hero: {},
         favorites: state.favorites !== undefined
-            ? [ ...state.favorites, action.hero ]
+            ? state.favorites.indexOf(action.hero) < 0
+                ? [ ...state.favorites, action.hero ]
+                : [ ...state.favorites ]
             : [ action.hero ]
       };
     case UNFAVORITE_HERO:

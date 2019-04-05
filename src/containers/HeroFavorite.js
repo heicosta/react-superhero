@@ -9,7 +9,7 @@ function HeroFavorite({ favorites, onUnfavoriteHero }) {
     if(!favorites || !favorites.length) {
         return (
             <div>
-                No Favorite Heroes selected =/
+                No Favorite Heroes selected =(((
             </div>
         )
     }

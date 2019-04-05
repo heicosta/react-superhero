@@ -14,9 +14,11 @@ class App extends Component {
         return (
             <div className="container">
                 <div className="row" style={stylesApp}>
-                    <h3> Top Cyro[R0x] Heroes </h3>
+                    <div>
+                        <h3> TOP Cyro[R0x] Heroes =DDD</h3>
+                    </div>
                     <br/>
-                    <div className="col-md-12">
+                    <div className="col-md-12" style={stylesApp}>
                         <HeroList/>
                     </div>
                 </div>
@@ -26,6 +28,7 @@ class App extends Component {
                         <HeroDetail/>
                     </div>
                 </div>
+                <br/>
                 <div className="row">
                     <h3> Favorites </h3>
                     <div className="col-md-12">

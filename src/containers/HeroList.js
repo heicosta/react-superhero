@@ -8,7 +8,8 @@ function HeroList({ heroes, onDetailHero }) {
     if(!heroes || !heroes.length) {
         return (
             <div>
-                Now Loading SuperHeroes from http://superheroapi.com ...
+                Please wait. Loading SuperHeroes from http://superheroapi.com ..............
+                (if nothing appear, please check you connection =P)
             </div>
         )
     }
